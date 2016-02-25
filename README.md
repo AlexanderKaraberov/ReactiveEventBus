@@ -6,7 +6,7 @@ I used [RxJava](https://github.com/ReactiveX/RxJava) for it.
 
 #How to use
 E.g. in Android with [RxAndroid](https://github.com/ReactiveX/RxAndroid):
-* First create an Event object, which will be a representation of the fact that something has happened:
+* First create an Event object, which will be a formalized representation of the fact that something has happened. Event carry information/state associated with it:
 
 ```java
 public class ItemSelectedEvent {
@@ -33,7 +33,7 @@ public class ItemSelectedEvent {
                 .subscribe(new Action1<ItemSelectedEvent>() {
                     @Override
                     public void call(ItemSelectedEvent event) {
-                        Log.d("TAG", "Receive event: " + event.getSeletedItemPosition());
+                        Log.d("TAG", "Received an event: " + event.getSeletedItemPosition());
                     }
                 });
 ```
